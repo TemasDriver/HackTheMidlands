@@ -1,0 +1,14 @@
+import requests
+import json
+from random import *
+
+def CapitalOne():
+    url = ("http://api.reimaginebanking.com/enterprise/bills?key=099313bf21c0ee46db36cd859769cf01")
+    data = {"Id": str(randint(100,158)) + "azy"+str(randint(100,999)) +"b069" + str(randint(1,99)), "Creation date: ": "2016-10-30", "Recurring date :": str(randint(1,3)) , "Status :": "pending", "Payment amount :": str(randint(1,500)), "Remaining Days to pay :" : str(randint(1,6)) }
+    response = requests.get(url, data)
+
+    for key,value in data.items():
+        print(key,value)
+    
+
+CapitalOne()
